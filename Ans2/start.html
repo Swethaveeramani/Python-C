@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #f1f1f1;
+  padding: 20px;
+  margin: 0;
+}
+
+.container {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 100%;
+  width: 600px;
+  margin: auto;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.header .icon {
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.header div {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.patient-info {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.patient-info .profile-image {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  margin-right: 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.patient-info .name {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.patient-info .id {
+  font-size: 16px;
+  color: #555;
+}
+
+.progress-container {
+  background-color: #002647;
+  padding: 20px;
+  border-radius: 12px;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.progress-container .progress-bar {
+  width: 100%;
+  height: 20px;
+  background-color: #ccc;
+  border-radius: 12px;
+  overflow: hidden;
+  position: relative;
+}
+
+.progress-container .progress-bar .fill {
+  width: 40%;
+  height: 100%;
+  background-color: #FFD700; /* Yellow color for 40% */
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.progress-container .title {
+  color: #fff;
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.chart-container {
+  text-align: center;
+}
+
+.chart-container .chart {
+  display: flex;
+  justify-content: space-between;
+}
+
+.chart-container .chart .bar {
+  width: 20px;
+  height: 20px;
+  border-radius: 10px;
+  margin: 0 5px;
+}
+
+.chart-container .chart .label {
+  font-size: 14px;
+  color: #fff;
+}
+
+.details {
+  display: flex;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.details .label {
+  font-weight: bold;
+  margin-right: 12px;
+  min-width: 120px;
+  color: #333;
+}
+
+.details .value {
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+}
+
+.details .value .icon {
+  margin-right: 10px;
+  font-size: 18px;
+}
+
+.medical-history {
+  background-color: #f9f9f9;
+  padding: 12px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  border: 1px solid #ddd;
+}
+
+.medical-history .title {
+  font-weight: bold;
+  margin-bottom: 8px;
+  font-size: 16px;
+}
+
+.medical-history .description {
+  font-size: 14px;
+  color: #666;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .container {
+    padding: 15px;
+  }
+
+  .header .icon {
+    font-size: 20px;
+  }
+
+  .patient-info {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .patient-info .profile-image {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 10px;
+  }
+
+  .patient-info .name {
+    font-size: 18px;
+  }
+
+  .patient-info .id {
+    font-size: 14px;
+  }
+
+  .progress-container .title {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 10px;
+    width: 100%;
+  }
+
+  .header .icon {
+    font-size: 18px;
+  }
+
+  .patient-info .profile-image {
+    width: 50px;
+    height: 50px;
+  }
+
+  .patient-info .name {
+    font-size: 16px;
+  }
+
+  .patient-info .id {
+    font-size: 12px;
+  }
+
+  .progress-container .title {
+    font-size: 14px;
+  }
+
+  .chart-container .chart .bar {
+    width: 15px;
+    height: 15px;
+  }
+
+  .chart-container .chart .label {
+    font-size: 12px;
+  }
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+  <div class="header">
+    <div class="icon">&#8592;</div>
+    <div>View patient</div>
+  </div>
+  <div class="patient-info">
+    <img src="https://cdn.vectorstock.com/i/500p/53/42/user-member-avatar-face-profile-icon-vector-22965342.jpg" alt="Profile Image" class="profile-image">
+    <div>
+      <div class="name">S.Meena, F/23</div>
+      <div class="id">Patient ID: 87 20200727153457</div>
+    </div>
+  </div>
+  <div class="progress-container">
+    <div class="title">Goal reached</div>
+    <div class="progress-bar">
+      <div class="fill"></div>
+    </div>
+    <div class="chart-container">
+      <div style="text-align: center;">40%</div>
+      <div class="chart">
+        <div class="bar" style="background-color: #007bff;"></div>
+        <div class="label">EMG</div>
+        <div class="bar" style="background-color: #dc3545;"></div>
+        <div class="label">ROM</div>
+      </div>
+    </div>
+  </div>
+  <div class="details">
+    <div class="label">Phone no.</div>
+    <div class="value"><span class="icon">&#128222;</span>8022334455</div>
+  </div>
+  <div class="details">
+    <div class="label">Mail ID</div>
+    <div class="value"><span class="icon">&#9993;</span>meenarabinsachin2@gmail.com</div>
+  </div>
+  <div class="details">
+    <div class="label">Affected side</div>
+    <div class="value"><span class="icon">&#127947;</span>Billateral</div>
+  </div>
+  <div class="details">
+    <div class="label">Condition</div>
+    <div class="value"><span class="icon">&#128101;</span>Ortho</div>
+  </div>
+  <div class="details">
+    <div class="label">Speciality</div>
+    <div class="value"><span class="icon">&#128187;</span>Osteoarthritis</div>
+  </div>
+  <div class="medical-history">
+    <div class="title">Medical history</div>
+    <div class="description">Hypertension, DM, Hypothyroidism</div>
+  </div>
+</div>
+
+</body>
+</html>
